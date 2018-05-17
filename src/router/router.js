@@ -1,16 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Edulynx from '@/Edulynx'
+import Home from '../components/Home'
 
+Vue.use(Router);
 
-
-Vue.use(Router)
-
-const router =  new Router({
+export default new Router({
   routes: [
     {path: '/', name: 'Edulynx', component: Edulynx},
-    {path: '/home', name: 'Edulynx', component: Edulynx}
+    {path: '/home', name: 'Home', component: Home},
   ]
-})
-
-export default router
+});

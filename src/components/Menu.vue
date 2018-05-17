@@ -1,62 +1,68 @@
 <template>
     <md-content class="list">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <md-list>
-        <md-list-item>
-          <md-icon class="fa fa-home"></md-icon>
-          <span class="md-list-item-text">Home</span>
-        </md-list-item>
-
-        <md-list-item md-expand>
-          <md-icon class="fa fa-barcode"></md-icon>
-          <span class="md-list-item-text">Items</span>
-
-          <md-list slot="md-expand">
-            <md-list-item class="md-inset">Book</md-list-item>
-            <md-list-item class="md-inset">Movie</md-list-item>
-            <md-list-item class="md-inset">Link</md-list-item>
-          </md-list>
-        </md-list-item>
-      </md-list>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <md-list>
+            <router-link to="/home">
+                <md-list-item>
+                    <md-icon class="fa fa-home"></md-icon>
+                    <span class="md-list-item-text">
+                   Home
+                </span>
+                </md-list-item>
+            </router-link>
+            <md-list-item md-expand>
+                <md-icon class="fa fa-barcode"></md-icon>
+                <span class="md-list-item-text">Items</span>
+                <md-list slot="md-expand">
+                    <router-link to="/">
+                        <md-list-item class="md-inset">Book</md-list-item>
+                    </router-link>
+                    <router-link to="/">
+                        <md-list-item class="md-inset">Movie</md-list-item>
+                    </router-link>
+                    <router-link to="/">
+                        <md-list-item class="md-inset">Link</md-list-item>
+                    </router-link>
+                </md-list>
+            </md-list-item>
+        </md-list>
     </md-content>
 </template>
 
 <script>
-export default {
-  name: 'Menu',
-  data () {
-      return {}
+    export default {
+        name: 'Menu',
     }
-}
 </script>
 
 <style lang="scss" scoped>
-  $list-width: 180px;
+    $list-width: 180px;
 
-  .full-control {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-  }
+    .full-control {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+    }
 
-  .list {
-    width: $list-width;
-    height:100vh;
-  }
+    .list {
+        width: $list-width;
+        height: 100vh;
+    }
 
-  .full-control > .md-list {
-    width: $list-width;
-    height: 100%;
-    display: inline-block;
-    overflow: auto;
-    border: 1px solid rgba(#000, .12);
-    vertical-align: top;
-  }
+    .full-control > .md-list {
+        width: $list-width;
+        height: 100%;
+        display: inline-block;
+        overflow: auto;
+        border: 1px solid rgba(#000, .12);
+        vertical-align: top;
+    }
 
-  .control {
-    min-width: 250px;
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-  }
+    .control {
+        min-width: 250px;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+    }
 </style>
