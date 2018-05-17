@@ -1,5 +1,5 @@
 <template>
-    <div class="list">
+    <md-content class="list">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <md-list>
         <md-list-item>
@@ -18,7 +18,7 @@
           </md-list>
         </md-list-item>
       </md-list>
-    </div>
+    </md-content>
 </template>
 
 <script>
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  $list-width: 200px;
+  $list-width: 180px;
 
   .full-control {
     display: flex;
@@ -40,13 +40,12 @@ export default {
   }
 
   .list {
-    height: 100%;
     width: $list-width;
+    height:100vh;
   }
 
   .full-control > .md-list {
     width: $list-width;
-    background-color:#000;
     height: 100%;
     display: inline-block;
     overflow: auto;
