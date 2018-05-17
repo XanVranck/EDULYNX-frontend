@@ -1,18 +1,17 @@
 <template>
   <div id="edulynx">
-    <edulynx-menu/>
+    <edulynxmenu/>
   </div>
 </template>
 
 <script>
-import edulynxMenu from './components/EDULYNX-Menu.vue'
+import edulynxmenu from './components/Menu.vue'
 import axios from "axios";
-
 
 export default {
   name: 'edulynx',
   components: {
-    edulynxMenu
+    edulynxmenu
   }, created() {
             axios({ method: "GET", "url": "http://localhost:8080/exploration-days-backend" }).then(result => {
                 this.helloWorld = result.data;

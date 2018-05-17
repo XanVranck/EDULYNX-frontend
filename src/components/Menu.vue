@@ -47,7 +47,7 @@
 
 <script>
 export default {
-  name: 'EDULYNX-Menu',
+  name: 'Menu',
   data () {
       return {}
     }

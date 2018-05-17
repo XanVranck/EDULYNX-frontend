@@ -10,7 +10,7 @@ Vue.use(MdCheckbox);
 
 Vue.config.productionTip = false
 
-Vue.component('edulynxMenu', require('./components/EDULYNX-Menu.vue'));
+Vue.component('Menu', require('./components/Menu.vue'));
 
 new Vue({
   render: h => h(Edulynx)
