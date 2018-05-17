@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="edulynx">
     <edulynx-menu/>
   </div>
 </template>
@@ -10,7 +10,7 @@ import axios from "axios";
 
 
 export default {
-  name: 'app',
+  name: 'edulynx',
   components: {
     edulynxMenu
   }, created() {
