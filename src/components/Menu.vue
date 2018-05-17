@@ -1,48 +1,24 @@
 <template>
-  <div class="full-control">
     <div class="list">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <md-list>
-        <md-list-item md-expand>
-          <md-icon>whatshot</md-icon>
-          <span class="md-list-item-text">News</span>
-
-          <md-list slot="md-expand">
-            <md-list-item class="md-inset">World</md-list-item>
-            <md-list-item class="md-inset">Europe</md-list-item>
-            <md-list-item class="md-inset">South America</md-list-item>
-          </md-list>
-        </md-list-item>
-
-        <md-list-item md-expand>
-          <md-icon>videogame_asset</md-icon>
-          <span class="md-list-item-text">Games</span>
-
-          <md-list slot="md-expand">
-            <md-list-item class="md-inset">Console</md-list-item>
-            <md-list-item class="md-inset">PC</md-list-item>
-            <md-list-item class="md-inset">Phone</md-list-item>
-          </md-list>
-        </md-list-item>
-
-        <md-list-item md-expand>
-          <md-icon>video_library</md-icon>
-          <span class="md-list-item-text">Video</span>
-
-          <md-list slot="md-expand">
-            <md-list-item class="md-inset">Humor</md-list-item>
-            <md-list-item class="md-inset">Music</md-list-item>
-            <md-list-item class="md-inset">Movies</md-list-item>
-            <md-list-item class="md-inset">TV Shows</md-list-item>
-          </md-list>
-        </md-list-item>
-
         <md-list-item>
-          <md-icon>shopping_basket</md-icon>
-          <span class="md-list-item-text">Shop</span>
+          <md-icon class="fa fa-home"></md-icon>
+          <span class="md-list-item-text">Home</span>
+        </md-list-item>
+
+        <md-list-item md-expand>
+          <md-icon class="fa fa-barcode"></md-icon>
+          <span class="md-list-item-text">Items</span>
+
+          <md-list slot="md-expand">
+            <md-list-item class="md-inset">Book</md-list-item>
+            <md-list-item class="md-inset">Movie</md-list-item>
+            <md-list-item class="md-inset">Link</md-list-item>
+          </md-list>
         </md-list-item>
       </md-list>
     </div>
-  </div>
 </template>
 
 <script>
@@ -55,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  $list-width: 320px;
+  $list-width: 200px;
 
   .full-control {
     display: flex;
@@ -64,13 +40,14 @@ export default {
   }
 
   .list {
+    height: 100%;
     width: $list-width;
   }
 
   .full-control > .md-list {
     width: $list-width;
-    max-width: 100%;
-    height: 400px;
+    background-color:#000;
+    height: 100%;
     display: inline-block;
     overflow: auto;
     border: 1px solid rgba(#000, .12);
