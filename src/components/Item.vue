@@ -1,22 +1,7 @@
 <template>
   <div>
-    <md-card md-with-hover>
-      <md-ripple>
-        <md-card-header>
-          <div class="md-title">Card with hover effect</div>
-          <div class="md-subhead">It also have a ripple</div>
-        </md-card-header>
-
-        <md-card-content>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non.
-        </md-card-content>
-
-        <md-card-actions>
-          <md-button>Action</md-button>
-          <md-button>Action</md-button>
-        </md-card-actions>
-      </md-ripple>
-    </md-card>
+    <itemDetail/>
+    <comments/>
   </div>
 </template>
 
@@ -31,16 +16,27 @@
 
 <script>
 import router from '../router/router.js'
+import axios from "axios";
+import comments from './Comments.vue'
+import itemDetail from './itemDetail.vue'
 
 export default {
-  
-  name: 'RegularCards',
+  name: 'Item',
+  components: {
+    comments,
+    itemDetail
+  },
   data: () => ({
             router: router
         }),
   created() {
     this.id = this.router.currentRoute.params;
-    console.log('id', this.id)
+    axios.get('http://HI75840:8080/items/' + this.id, {headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}}).then(result => {
+                this.item = result.data;
+            }, error => {
+                alert(error);
+            });
+            return this.item;
   },
 }
 </script>

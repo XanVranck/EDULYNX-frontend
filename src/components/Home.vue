@@ -43,11 +43,16 @@ import axios from "axios";
                     this.sum += beoordeling.rating
                     this.amount += 1;
                 })
-                return this.sum / this.amount;
+                if(this.amount === 0){
+                    return 0
+                } else {
+                    return this.sum / this.amount;
+                }
+
             }
         },
         created() {
-            axios.get('http://localhost:8080/items', {headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}}).then(result => {
+            axios.get('http://HI75840:8080/items', {headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}}).then(result => {
                 this.items = result.data;
             }, error => {
                 alert(error);
