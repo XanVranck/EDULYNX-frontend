@@ -6,11 +6,11 @@
             <md-card md-with-hover>
                 <md-ripple>
                     <md-card-header>
-                        <div class="md-title">{{item.title}}</div>
+                        <div class="md-title">{{item.naam}}</div>
                     </md-card-header>
 
                     <md-card-content>
-                        {{item.summary}}
+                        Level: {{item.niveau}} 
                     </md-card-content>
 
                     <star-rating :rating="item.rating" :star-size="20" :read-only="true" :increment="0.5"></star-rating>
@@ -36,7 +36,7 @@ import axios from "axios";
             'add-item-dialog': AddItemDialog
         },
         created() {
-            axios({method: "GET", "url": "HI75840:8080/items"}).then(result => {
+            axios.get('http://HI75840:8080/items', {headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}}).then(result => {
                 this.items = result.data;
             }, error => {
                 alert(error);
