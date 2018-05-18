@@ -1,32 +1,34 @@
 <template>
-<div id = "Home">
-    <filter/>
-    <md-layout v-for="item in items" :key="item">
-        <md-card md-with-hover>
-            <md-ripple>
-                <md-card-header>
-                    <div class="md-title">{{item.title}}</div>
-                </md-card-header>
+    <div>
+        <add-item-dialog/>
+        <md-layout v-for="item in items" :key="item">
+            <md-card md-with-hover>
+                <md-ripple>
+                    <md-card-header>
+                        <div class="md-title">{{item.title}}</div>
+                    </md-card-header>
 
-                <md-card-content>
-                    {{item.summary}}
-                </md-card-content>
+                    <md-card-content>
+                        {{item.summary}}
+                    </md-card-content>
 
-                <md-card-footer>
-                    <star-rating :rating="item.rating" :star-size="20" :read-only="true" :increment="0.5"></star-rating>
-                </md-card-footer>
+                    <md-card-footer>
+                        <star-rating :rating="item.rating" :star-size="20" :read-only="true"
+                                     :increment="0.5"></star-rating>
+                    </md-card-footer>
 
-                <md-card-actions>
-                    <md-button>View</md-button>
-                </md-card-actions>
-            </md-ripple>
-        </md-card>
-    </md-layout>
-</div>
+                    <md-card-actions>
+                        <md-button>View</md-button>
+                    </md-card-actions>
+                </md-ripple>
+            </md-card>
+        </md-layout>
+    </div>
 </template>
 
 <script>
 import filter from './Filter.vue'
+import AddItemDialog from './AddItemDialog.vue'
 
     export default {
         name: 'Home',
@@ -34,6 +36,9 @@ import filter from './Filter.vue'
             filter
         },
         data () {
+            'add-item-dialog': AddItemDialog
+        },
+        data() {
             return {
                 items: [
                     {
@@ -76,7 +81,7 @@ import filter from './Filter.vue'
             }
         }
     }
-    
+
 </script>
 
 <style lang="scss" scoped>
