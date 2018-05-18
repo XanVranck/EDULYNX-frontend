@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "serve2": "./node_modules/\\@vue/cli-service/bin/vue-cli-service.js serve --open",
+    "build2": "./node_modules/\\@vue/cli-service/bin/vue-cli-service.js build",
+    "lint2": "./node_modules/\\@vue/cli-service/bin/vue-cli-service.js lint",
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -20,7 +23,8 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.13",
-    "webpack": "^4.8.3"
+    "webpack": "^4.8.3",
+    "webpack-dev-server": "^4.8.3"
   },
   "babel": {
     "presets": [
