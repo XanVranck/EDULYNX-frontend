@@ -30,7 +30,17 @@
 </style>
 
 <script>
+import router from '../router/router.js'
+
 export default {
-  name: 'RegularCards'
+  
+  name: 'RegularCards',
+  data: () => ({
+            router: router
+        }),
+  created() {
+    this.id = this.router.currentRoute.params;
+    console.log('id', this.id)
+  },
 }
 </script>

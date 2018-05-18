@@ -3,25 +3,23 @@
         <filterBar/>
         <add-item-dialog/>
         <md-layout v-for="item in items" :key="item.id">
-            <md-card md-with-hover>
-                <md-ripple>
-                    <md-card-header>
-                        <div class="md-title">{{item.naam}}</div>
-                    </md-card-header>
+            <router-link v-bind:to="{name : 'Item', params: {id: item.id}}">
+                <md-card md-with-hover>
+                    <md-ripple>
+                        <md-card-header>
+                            <div class="md-title">{{item.naam}}</div>
+                        </md-card-header>
 
-                    <md-card-content>
-                        <span style="font-weight:bold">Omschrijving: </span> {{item.omschrijving}} <br/>
-                        <span style="font-weight:bold">Level: </span>{{item.niveau}} <br/>
-                        <span style="font-weight:bold">Type: </span>{{item.type}} <br/>
-                    </md-card-content>
+                        <md-card-content>
+                            <span style="font-weight:bold">Omschrijving: </span> {{item.omschrijving}} <br/>
+                            <span style="font-weight:bold">Level: </span>{{item.niveau}} <br/>
+                            <span style="font-weight:bold">Type: </span>{{item.type}} <br/>
+                        </md-card-content>
 
-                    <star-rating :rating="item.rating" :star-size="20" :read-only="true" :increment="0.5"></star-rating>
-
-                    <md-card-actions>
-                        <md-button>View</md-button>
-                    </md-card-actions>
-                </md-ripple>
-            </md-card>
+                        <star-rating style="float:right;margin-right:10px;margin-bottom:10px" :rating="calculateRating(item.beoordelingen)" :star-size="20" :read-only="true" :increment="0.5"></star-rating>
+                    </md-ripple>
+                </md-card>
+            </router-link>
         </md-layout>
     </div>
 </template>
@@ -37,8 +35,19 @@ import axios from "axios";
             'filterBar': FilterBar,
             'add-item-dialog': AddItemDialog
         },
+        methods: {
+            calculateRating: function (beoordelingen) {
+                this.sum = 0;
+                this.amount = 0;
+                beoordelingen.forEach(beoordeling => {
+                    this.sum += beoordeling.rating
+                    this.amount += 1;
+                })
+                return this.sum / this.amount;
+            }
+        },
         created() {
-            axios.get('http://HI75840:8080/items', {headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}}).then(result => {
+            axios.get('http://localhost:8080/items', {headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}}).then(result => {
                 this.items = result.data;
             }, error => {
                 alert(error);
@@ -47,7 +56,9 @@ import axios from "axios";
         },
         data () {
             return {
-                items: []
+                items: [],
+                sum: Number,
+                amount: Number
             }
         }
     }
