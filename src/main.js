@@ -5,9 +5,11 @@ import router from './router/router.js'
 import 'vue-material/dist/theme/black-green-dark.css'
 import VueMaterial from 'vue-material'
 import StarRating from 'vue-star-rating';
+import AddItemDialog from './components/AddItemDialog';
 
 Vue.use(VueMaterial);
 Vue.component('star-rating', StarRating);
+Vue.component('add-item-dialog', AddItemDialog);
 
 Vue.config.productionTip = false;
 
