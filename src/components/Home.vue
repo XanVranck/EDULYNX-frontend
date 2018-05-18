@@ -2,7 +2,7 @@
     <div>
         <filterBar/>
         <add-item-dialog/>
-        <md-layout v-for="item in items" :key="item">
+        <md-layout v-for="item in items" :key="item.id">
             <md-card md-with-hover>
                 <md-ripple>
                     <md-card-header>
@@ -13,10 +13,7 @@
                         {{item.summary}}
                     </md-card-content>
 
-                    <md-card-footer>
-                        <star-rating :rating="item.rating" :star-size="20" :read-only="true"
-                                     :increment="0.5"></star-rating>
-                    </md-card-footer>
+                    <star-rating :rating="item.rating" :star-size="20" :read-only="true" :increment="0.5"></star-rating>
 
                     <md-card-actions>
                         <md-button>View</md-button>
@@ -30,12 +27,21 @@
 <script>
 import FilterBar from './FilterBar.vue'
 import AddItemDialog from './AddItemDialog.vue'
+import axios from "axios";
 
     export default {
         name: 'Home',
         components: {
             'filterBar': FilterBar,
             'add-item-dialog': AddItemDialog
+        },
+        created() {
+            axios({method: "GET", "url": "http://localhost:8080/items"}).then(result => {
+                this.items = result.data;
+            }, error => {
+                alert(error);
+            });
+            return this.items;
         },
         data () {
             return {

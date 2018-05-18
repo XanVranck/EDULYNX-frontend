@@ -11,7 +11,6 @@
 
 <script>
     import edulynxtoolbar from './components/Toolbar.vue'
-    import axios from "axios";
     import router from './router/router.js'
 
     export default {
@@ -19,14 +18,7 @@
         components: {
             edulynxtoolbar,
             router
-        }, created() {
-            axios({method: "GET", "url": "http://localhost:8080/exploration-days-backend"}).then(result => {
-                this.helloWorld = result.data;
-            }, error => {
-                console.error(error);
-            });
-            return this.helloWorld;
-        },
+        }
     }
 </script>
 
