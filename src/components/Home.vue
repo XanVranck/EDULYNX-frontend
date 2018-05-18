@@ -12,7 +12,7 @@
                     <md-card-content>
                         Level: {{item.niveau}} 
                     </md-card-content>
-                    
+
                     <star-rating :rating="item.rating" :star-size="20" :read-only="true" :increment="0.5"></star-rating>
 
                     <md-card-actions>
@@ -42,6 +42,11 @@ import axios from "axios";
                 alert(error);
             });
             return this.items;
+        },
+        data () {
+            return {
+                items: []
+            }
         }
     }
 
