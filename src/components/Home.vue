@@ -12,7 +12,7 @@
                     <md-card-content>
                         Level: {{item.niveau}} 
                     </md-card-content>
-
+                    
                     <star-rating :rating="item.rating" :star-size="20" :read-only="true" :increment="0.5"></star-rating>
 
                     <md-card-actions>
@@ -42,48 +42,6 @@ import axios from "axios";
                 alert(error);
             });
             return this.items;
-        },
-        data () {
-            return {
-                items: [
-                    {
-                        type: 'book',
-                        rating: 1,
-                        title: 'Wim is toch niet zo leuk',
-                        summary: 'Dit boek gaat over het feit dat we dachten dat Wim leuk was, never have we been so wrong...'
-                    },
-                    {
-                        type: 'video',
-                        rating: 4,
-                        title: 'Mattias home made video',
-                        summary: 'Mattia temptation island edition.'
-                    },
-                    {
-                        type: 'blogpost',
-                        rating: 3.5,
-                        title: 'Hard-coding is not a crime',
-                        summary: 'Xan Vranckaert explains why hard-coding is always a good idea'
-                    },
-                    {
-                        type: 'book',
-                        rating: 5,
-                        title: 'Williams diary',
-                        summary: 'The Diary of William mia allegria potria vafia tralalia'
-                    },
-                    {
-                        type: 'video',
-                        rating: 2,
-                        title: 'How to be on time by Bob Reyiers',
-                        summary: 'Short video on how to never be late again'
-                    },
-                    {
-                        type: 'article',
-                        rating: 5,
-                        title: 'How to work efficiently with foreigners',
-                        summary: 'Article based on a team consistent of Italians and Portugese scum'
-                    }
-                ]
-            }
         }
     }
 
