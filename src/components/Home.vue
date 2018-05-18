@@ -1,47 +1,52 @@
 <template>
-    <md-content>
+<div>
+    <md-layout v-for="item in items" :key="item">
         <md-card md-with-hover>
             <md-ripple>
                 <md-card-header>
-                    <div class="md-title">Card with hover effect</div>
-                    <div class="md-subhead">It also have a ripple</div>
+                    <div class="md-title">{{item.title}}</div>
                 </md-card-header>
 
                 <md-card-content>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non.
+                    {{item.summary}}
                 </md-card-content>
 
+                <md-card-footer>
+                    <star-rating :rating="item.rating" :star-size="20" :read-only="true" :increment="0.5"></star-rating>
+                </md-card-footer>
+
                 <md-card-actions>
-                    <md-button>Action</md-button>
-                    <md-button>Action</md-button>
+                    <md-button>View</md-button>
                 </md-card-actions>
             </md-ripple>
         </md-card>
-
-        <md-card md-with-hover>
-            <md-ripple>
-                <md-card-header>
-                    <div class="md-title">Card with hover effect</div>
-                    <div class="md-subhead">It also have a ripple</div>
-                </md-card-header>
-
-                <md-card-content>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non.
-                </md-card-content>
-
-                <md-card-actions>
-                    <md-button>Action</md-button>
-                    <md-button>Action</md-button>
-                </md-card-actions>
-            </md-ripple>
-        </md-card>
-    </md-content>
+    </md-layout>
+</div>
 </template>
 
 <script>
     export default {
-        name: 'Home'
+        name: 'Home',
+        data () {
+            return {
+                items: [
+                    {
+                        type: 'book',
+                        rating: 1,
+                        title: 'Wim is toch niet zo leuk',
+                        summary: 'Dit boek gaat over het feit dat we dachten dat Wim leuk was, never have we been so wrong...'
+                    },
+                    {
+                        type: 'video',
+                        rating: 4,
+                        title: 'Mattias home made video',
+                        summary: 'Mattia temptation island edition.'
+                    }
+                ]
+            }
+        }
     }
+    
 </script>
 
 <style lang="scss" scoped>

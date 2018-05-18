@@ -46,5 +46,6 @@
 
     .view-content {
         flex: 1 0 500px;
+        margin: 50px;
     }
 </style>
