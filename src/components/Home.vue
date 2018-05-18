@@ -1,5 +1,6 @@
 <template>
     <div>
+        <filterBar/>
         <add-item-dialog/>
         <md-layout v-for="item in items" :key="item">
             <md-card md-with-hover>
@@ -27,18 +28,16 @@
 </template>
 
 <script>
-import filter from './Filter.vue'
+import FilterBar from './FilterBar.vue'
 import AddItemDialog from './AddItemDialog.vue'
 
     export default {
         name: 'Home',
         components: {
-            filter
-        },
-        data () {
+            'filterBar': FilterBar,
             'add-item-dialog': AddItemDialog
         },
-        data() {
+        data () {
             return {
                 items: [
                     {
