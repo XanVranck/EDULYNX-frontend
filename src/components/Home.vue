@@ -36,7 +36,7 @@ import axios from "axios";
             'add-item-dialog': AddItemDialog
         },
         created() {
-            axios({method: "GET", "url": "http://localhost:8080/items"}).then(result => {
+            axios({method: "GET", "url": "HI75840:8080/items"}).then(result => {
                 this.items = result.data;
             }, error => {
                 alert(error);
