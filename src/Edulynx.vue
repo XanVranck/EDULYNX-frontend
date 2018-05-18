@@ -2,7 +2,6 @@
     <div id="edulynx">
         <edulynxtoolbar/>
         <div class="flex-container">
-            <edulynxmenu/>
             <div class="view-content">
                 <router-view></router-view>
             </div>
@@ -11,7 +10,6 @@
 </template>
 
 <script>
-    import edulynxmenu from './components/Menu.vue'
     import edulynxtoolbar from './components/Toolbar.vue'
     import axios from "axios";
     import router from './router/router.js'
@@ -19,7 +17,6 @@
     export default {
         name: 'edulynx',
         components: {
-            edulynxmenu,
             edulynxtoolbar,
             router
         }, created() {

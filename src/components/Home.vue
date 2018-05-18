@@ -1,5 +1,6 @@
 <template>
-<div>
+<div id = "Home">
+    <filter/>
     <md-layout v-for="item in items" :key="item">
         <md-card md-with-hover>
             <md-ripple>
@@ -25,8 +26,13 @@
 </template>
 
 <script>
+import filter from './Filter.vue'
+
     export default {
         name: 'Home',
+        components: {
+            filter
+        },
         data () {
             return {
                 items: [
