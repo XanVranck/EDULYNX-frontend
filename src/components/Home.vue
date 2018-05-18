@@ -41,6 +41,30 @@
                         rating: 4,
                         title: 'Mattias home made video',
                         summary: 'Mattia temptation island edition.'
+                    },
+                    {
+                        type: 'blogpost',
+                        rating: 3.5,
+                        title: 'Hard-coding is not a crime',
+                        summary: 'Xan Vranckaert explains why hard-coding is always a good idea'
+                    },
+                    {
+                        type: 'book',
+                        rating: 5,
+                        title: 'Williams diary',
+                        summary: 'The Diary of William mia allegria potria vafia tralalia'
+                    },
+                    {
+                        type: 'video',
+                        rating: 2,
+                        title: 'How to be on time by Bob Reyiers',
+                        summary: 'Short video on how to never be late again'
+                    },
+                    {
+                        type: 'article',
+                        rating: 5,
+                        title: 'How to work efficiently with foreigners',
+                        summary: 'Article based on a team consistent of Italians and Portugese scum'
                     }
                 ]
             }
