@@ -1,7 +1,8 @@
 <template>
   <div>
-    <md-radio v-model="seachOn" value="title">Title</md-radio>
-    <md-radio v-model="seachOn" value="tags">Tags</md-radio>
+    <md-radio v-model="searchOn" value="title">Title</md-radio>
+    <md-radio v-model="searchOn" value="tag">Tags</md-radio>
+    <input type="text" class="search-wrapper" v-model="search" placeholder="Search..."/>
   </div>
 </template>
 
@@ -9,7 +10,7 @@
     export default {
         name: 'FilterBar',
         data: () => ({
-            seachOn: "title"
+            searchOn: "title"
         })
     }
 </script>
