@@ -2,7 +2,7 @@
   <div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <md-toolbar>
-      <router-link to="/home">
+      <router-link to="/">
         <md-icon class="fa fa-home"></md-icon>
       </router-link>
       <h3 class="md-title title">EDULYNX</h3>
