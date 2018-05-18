@@ -10,7 +10,9 @@
                     </md-card-header>
 
                     <md-card-content>
-                        Level: {{item.niveau}} 
+                        <span style="font-weight:bold">Omschrijving: </span> {{item.omschrijving}} <br/>
+                        <span style="font-weight:bold">Level: </span>{{item.niveau}} <br/>
+                        <span style="font-weight:bold">Type: </span>{{item.type}} <br/>
                     </md-card-content>
 
                     <star-rating :rating="item.rating" :star-size="20" :read-only="true" :increment="0.5"></star-rating>
